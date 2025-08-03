@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Style Guide Generator</title>
+<link rel="stylesheet" href="kitchen_sink-styleguide.css" />
+</head>
+<body>
+
+<h2>Style Guide</h2>
+
+<div id="style-guide"></div>
+
+<script>
+  // Elements to include in the style guide
+  const elements = [
+    { tag: 'h1', text: 'Heading 1 Example' },
+    { tag: 'p', text: 'Paragraph Example' },
+    { tag: 'button', text: 'Click Me' }
+  ];
+
+  // Styles to show in the CSS column
+  const stylesToShow = [
+    'font-family',
+    'font-size',
+    'font-weight',
+    'color',
+    'background-color',
+    'margin',
+    'padding',
+    'border',
+    'text-align',
+    'line-height'
+  ];
+
+  const styleGuideContainer = document.getElementById('style-guide');
+
+  elements.forEach(({ tag, text }) => {
+    const el = document.createElement(tag);
+    el.classList.add('styled-element');
+    el.textContent = text;
+    document.body.appendChild(el); // temporarily add to DOM to compute styles
+
+    const computedStyles = window.getComputedStyle(el);
+    let cssText = '';
+    stylesToShow.forEach(prop => {
+      cssText += `${prop}: ${computedStyles.getPropertyValue(prop)};\n`;
+    });
+
+    // Build table row
+    const table = document.createElement('table');
+    const row = document.createElement('tr');
+
+    const left = document.createElement('td');
+    left.appendChild(el); // move the styled element into table
+
+    const right = document.createElement('td');
+    const pre = document.createElement('pre');
+    pre.textContent = cssText;
+    right.appendChild(pre);
+
+    row.appendChild(left);
+    row.appendChild(right);
+    table.appendChild(row);
+
+    styleGuideContainer.appendChild(table);
+  });
+</script>
+
+</body>
+</html>
