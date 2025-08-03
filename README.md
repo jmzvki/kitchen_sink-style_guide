@@ -33,7 +33,8 @@ Here is my set up - which, no doubt, you will criticize:
 
 - MAMP Pro [now that Apple doesn't natively support PHP (shakes fists at the sky)]
 - "generic" defined virtual host
-- Edit with [Stylizer](http://www.skybound.ca) _thinkinkless shakes her head_
+- ~~Edit with [Stylizer](http://www.skybound.ca) _thinkinkless shakes her head_~~
+- ^ has been abandoned - so, I found [CSS Pro](https://csspro.com) - which, actually, I like better
 
 Enjoy and fork it,
 

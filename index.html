@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hello World</title>
+
+  <!-- CSS -->
+  <style>
+    body {
+      background-color: #ccc;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+
+  <!-- jQuery (CDN) -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- jQuery Script -->
+  <script>
+    $(document).ready(function() {
+      $('#rockBtn').click(function() {
+        alert('You Rock!');
+      });
+    });
+  </script>
+</head>
+<body>
+  <h1>Hello World</h1>
+  <button id="rockBtn">Click Me!</button>
+  <a href="/kitchen_sink-styleguide.html"><button id="rockBtn">Open Kitchen Sink</button></a>
+</body>
+</html>
